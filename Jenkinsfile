@@ -18,5 +18,18 @@ pipeline {
         }  
    
     }
+
+    post {
+        always {
+            echo "I am always successful"
+	}
+        success {
+            echo "I am  successful only in Success"
+	}
+        failure {
+            echo "I am in Failed state "
+	}
+
+    }
         
 }
