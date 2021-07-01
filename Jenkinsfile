@@ -1,3 +1,5 @@
+//Very good example to start Jenkins pipline Syntax 
+
 pipeline {
     agent any    
     environment {
