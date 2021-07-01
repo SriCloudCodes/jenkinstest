@@ -1,5 +1,8 @@
 pipeline {
     agent any    
+    environment {
+	dockerHome = tool 'mydocker'
+        mavenHome  = tool "mymaven"
     stages {
         stage ('Build') {
             steps {
