@@ -1,4 +1,4 @@
-//Very good example to start Jenkins pipline Syntax 
+//Working Very good example to start Jenkins pipline Syntax 
 
 pipeline {
     agent any    
