@@ -37,7 +37,7 @@ pipeline {
         stage ('IntTest Build') {
             steps {
                         echo "IntTest Build"
-			sh "mvn failsafe:interation-test faisafe:verify"
+			sh "mvn failsafe:integration-test failsafe:verify"
             }
         }  
    
