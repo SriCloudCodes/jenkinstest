@@ -12,7 +12,7 @@ pipeline {
             steps {
 		sh 'mvn --version'
                 echo "Build"
-		//echo "$dockerHome"
+		//echo "$dockerHome" (giving error)
 		echo "$mavenHome"
                 echo "$PATH"
                 echo "BUILD_NUMBER - $env.BUILD_NUMBER"
@@ -43,6 +43,30 @@ pipeline {
 			sh "mvn failsafe:integration-test failsafe:verify"
             }
         }  
+
+        stage ("Package")  {
+           steps {
+		sh "mvn package -DskipTest"   
+           }
+	}
+        /*
+	stage ('Build Docker Image') {
+ 	   steps {
+                  //"docker biuld -t <dockerlogin>/curreny-exchange-devops:$env.BUILD_TAG"
+               script {
+		    dockerImage = docker.build("in28min/Currency-exchange-deop :${env.BUILD_TAG}
+	       }
+	   }
+        }
+	stage ('Push to Docker ) {
+  	    steps {
+		script {
+			docker.withRegistry('',Dokerhub")
+			dockerImage.push()
+			dockerImage.push("latest")
+                }
+            }
+	} */
    
     }
 
